@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Custom Basit Tech Colors */
+  --basit-deep: hsl(219, 68%, 29%);
+  --basit-medium: hsl(213, 94%, 68%);
+  --basit-light: hsl(213, 93%, 73%);
+  --basit-gray: hsl(215, 14%, 48%);
+  --basit-soft: hsl(210, 40%, 98%);
+}
+
+/* Ultra HD Image Optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+/* Portfolio Image Enhancement */
+.portfolio-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(1.02) brightness(1.01) saturate(1.02);
+  transition: filter 0.3s ease;
+}
+
+.portfolio-image:hover {
+  filter: contrast(1.05) brightness(1.03) saturate(1.05);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glassmorphism-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
+  }
+  
+  .mesh-gradient {
+    background: radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(30, 58, 138, 0.2) 0%, transparent 50%);
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-flash-glow {
+    animation: flash-glow 3s ease-in-out infinite;
+  }
+
+  .animate-lightning {
+    animation: lightning 4s ease-in-out infinite;
+  }
+
+  .animation-delay-300ms {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-600ms {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-900ms {
+    animation-delay: 900ms;
+  }
+
+  .animation-delay-1200ms {
+    animation-delay: 1200ms;
+  }
+
+  .animation-delay-1s {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-2s {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-3s {
+    animation-delay: 3s;
+  }
+
+  .animation-delay-4s {
+    animation-delay: 4s;
+  }
+
+  .animation-delay-5s {
+    animation-delay: 5s;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.4), 0 0 40px rgba(96, 165, 250, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.6), 0 0 60px rgba(96, 165, 250, 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes flash-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+    filter: blur(20px);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(5deg);
+    filter: blur(15px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(-3deg);
+    filter: blur(10px);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(2deg);
+    filter: blur(18px);
+  }
+}
+
+@keyframes lightning {
+  0%, 90%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) scale(0.8) skewX(0deg);
+  }
+  1%, 3% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.2) skewX(-10deg);
+  }
+  2% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(-50%) scale(1) skewX(5deg);
+  }
+  4%, 6% {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(-50%) scale(1.1) skewX(-5deg);
+  }
+  5% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(-50%) scale(0.9) skewX(8deg);
+  }
+}
